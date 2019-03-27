@@ -10,6 +10,7 @@ public class DaemonThread01 {
             while (true) {
                 try {
                     Thread.sleep(1);
+                    System.out.println("守护线程¬");
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -21,5 +22,4 @@ public class DaemonThread01 {
         Thread.sleep(2000);
         System.out.println("Main thread finished lifecycle.");
     }
-
 }
