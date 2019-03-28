@@ -23,7 +23,7 @@ public class ThreadPoolTest {
                 }
             });
         }
-        for (; ; ) {
+        /*for (; ; ) {
             //不断输出线程池信息
             System.out.println("getActiveCount:" + threadPool.getActiveCount());
             System.out.println("getQueueSize:" + threadPool.getQueueSize());
@@ -31,7 +31,6 @@ public class ThreadPoolTest {
             System.out.println("getMaxSize:" + threadPool.getMaxSize());
             System.out.println("=======================================");
             TimeUnit.SECONDS.sleep(5);
-        }
+        }*/
     }
-
 }
