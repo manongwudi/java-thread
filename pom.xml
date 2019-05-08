@@ -12,6 +12,22 @@
     <build>
         <finalName>java-thread</finalName>
         <plugins>
+            <!--SPI机制打包-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Premain-class>cn.wudimanong.spi.SPIMain</Premain-class>
+                            <Can-Redefine-Classes>false</Can-Redefine-Classes>
+                            <addClassPath>true</addClassPath>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

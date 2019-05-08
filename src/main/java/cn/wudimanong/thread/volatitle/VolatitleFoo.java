@@ -8,7 +8,6 @@ import java.util.concurrent.TimeUnit;
 public class VolatitleFoo {
     //类变量
     final static int max = 5;
-
     static volatile int init_value = 0;
 
     public static void main(String args[]) {
@@ -23,10 +22,8 @@ public class VolatitleFoo {
                 }
             }
         }, "Reader").start();
-
         //启动updater线程，主要用于对init_value的修改，当local_value=5的时候退出生命周期
         new Thread(() -> {
-
             int localValue = init_value;
             while (localValue < max) {
                 //修改init_value
