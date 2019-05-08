@@ -7,7 +7,7 @@ import cn.wudimanong.spi.SPIService;
  */
 public class SpiImpl2 implements SPIService {
     @Override
-    public void execute() {
-        System.out.println("SpiImpl2 Hello.");
+    public String execute() {
+        return "SpiImpl2 Hello";
     }
 }

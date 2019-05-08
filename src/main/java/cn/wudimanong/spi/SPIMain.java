@@ -1,6 +1,7 @@
 package cn.wudimanong.spi;
 
 
+import java.util.Iterator;
 import java.util.ServiceLoader;
 
 /**
@@ -12,8 +13,11 @@ public class SPIMain {
         ServiceLoader<SPIService> loaders =
                 ServiceLoader.load(SPIService.class);
 
-        for (SPIService in : loaders) {
-            in.execute();
+        Iterator<SPIService> spiServiceIterator = loaders.iterator();
+        System.out.println("classPath:" + System.getProperty("java.class.path"));
+        while (spiServiceIterator.hasNext()) {
+            SPIService spiService = spiServiceIterator.next();
+            System.out.println(spiService.execute());
         }
     }
 }
